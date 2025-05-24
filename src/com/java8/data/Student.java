@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,4 +19,12 @@ public class Student {
     private double gpa;
     private String gender;
     private List<String> activities;
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public Student getOneStudent(){
+        return new Student("Adam",2,3.6, "male", Arrays.asList("swimming", "basketball","volleyball"));
+    }
 }
