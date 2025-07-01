@@ -1,6 +1,6 @@
 package com.java8.generics;
 
-public class NonBoundedExample <T> {
+public class NonBoundedExample <T extends Number> {
 
     T [] nums;
 
@@ -10,9 +10,9 @@ public class NonBoundedExample <T> {
 
     double average(){
         double avg = 0.0;
-        for(int i=0; i< nums.length ; i++){
-            double d = (double) nums[i];
-            //avg += d.doubleValue(); //Error
+        for (T num : nums) {
+            //avg += d.doubleValue(); //Error without T extends Number
+            avg += num.doubleValue();
         }
         return avg;
     }
